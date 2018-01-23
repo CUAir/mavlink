@@ -1439,5 +1439,16 @@
       <field name="AOA" type="float">Angle of Attack (degrees)</field>
       <field name="SSA" type="float">Side Slip Angle (degrees)</field>
     </message>
+    <message id="11021" name="SPLINE_CONTROL_POINTS">
+      <description>Control points for cubic bezier curves between each waypoint</description>
+      <field type="int32_t" name="cp1_lat" units="degE7">Control point one latitude, expressed as degrees * 1E7. This is the waypoint the plane has just passed</field>
+      <field type="int32_t" name="cp1_lon" units="degE7">Control point one longitude, expressed as degrees * 1E7. This is the waypoint the plane has just passed</field>
+      <field type="int32_t" name="cp2_lat" units="degE7">Control point two latitude, expressed as degrees * 1E7</field>
+      <field type="int32_t" name="cp2_lon" units="degE7">Control point two longitude, expressed as degrees * 1E7</field>
+      <field type="int32_t" name="cp3_lat" units="degE7">Control point three latitude, expressed as degrees * 1E7</field>
+      <field type="int32_t" name="cp3_lon" units="degE7">Control point three longitude, expressed as degrees * 1E7</field>
+      <field type="int32_t" name="cp4_lat" units="degE7">Control point four latitude, expressed as degrees * 1E7. This is the current target waypoint</field>
+      <field type="int32_t" name="cp4_lon" units="degE7">Control point four longitude, expressed as degrees * 1E7. This is the current target waypoint</field>
+    </message>
   </messages>
 </mavlink>
