@@ -1450,5 +1450,17 @@
       <field type="int32_t" name="cp4_lat" units="degE7">Control point four latitude, expressed as degrees * 1E7. This is the current target waypoint</field>
       <field type="int32_t" name="cp4_lon" units="degE7">Control point four longitude, expressed as degrees * 1E7. This is the current target waypoint</field>
     </message>
+    <message id="11022" name="DIGICAM_CAPTURE">
+      <description>Alternate to DIGICAM_CONTROL message that contains a uint64_t for time tracking purposes</description>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+      <field type="uint8_t" name="session">0: stop, 1: start or keep it up //Session control e.g. show/hide lens</field>
+      <field type="uint8_t" name="zoom_pos">1 to N //Zoom's absolute position (0 means ignore)</field>
+      <field type="int8_t" name="zoom_step">-100 to 100 //Zooming step value to offset zoom from the current position</field>
+      <field type="uint8_t" name="focus_lock">0: unlock focus or keep unlocked, 1: lock focus or keep locked, 3: re-lock focus</field>
+      <field type="uint8_t" name="shot">0: ignore, 1: shot or start filming</field>
+      <field type="uint8_t" name="command_id">Command Identity (incremental loop: 0 to 255)//A command sent multiple times will be executed or pooled just once</field>
+      <field type="uint64_t" name="time_value">Value of OBC time used for identifying photos</field>
+    </message>
   </messages>
 </mavlink>
